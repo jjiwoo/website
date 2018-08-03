@@ -1,0 +1,953 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,300,300i,400,400i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Raleway:700,700i');
+
+/*
+	Nanum+Gothic
+		font-family: ""Nanum Gothic", sans-serif;
+	Open sans
+		font-family: "Open sans", sans-serif  ;
+	Raleway
+		font-family: "Raleway", sans-serif;
+*/
+
+
+/* reset */
+	html,body {margin:0; padding:0; font-family:"나눔고딕","Nanum Gothic","Helvetica Neue",Arial,sans-serif; font-weight:normal; font-size:12px; height:100%; color:#333; -webkit-text-size-adjust:none; position:relative; line-height:1.2;}
+	dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote {margin:0; padding:0; -webkit-text-size-adjust:none;}
+	th,td,input,textarea,select {font-size:12px; color:#333; font-family:"나눔고딕","Nanum Gothic","Helvetica Neue",Arial,sans-serif; -webkit-text-size-adjust:none;}
+	th,td {word-break:break-all; word-wrap:break-word; -webkit-text-size-adjust:none;}
+	table {border-spacing:0; border-collapse:collapse; -webkit-text-size-adjust:none; border:0; table-layout:fixed;}
+	address,caption,cite,code,dfn,var {font-style:normal; font-weight:normal; -webkit-text-size-adjust:none;}
+	em {font-style:normal; -webkit-text-size-adjust:none;}
+	ol,ul,li {list-style:none;}
+	h1,h2,h3,h4,h5,h6 {font-size:100%;}
+	abbr,acronym {border:0;}
+	hr,legend,caption {visibility:hidden; overflow:hidden; line-height:0; width:0; height:0; margin:0; padding:0;}
+	img,fieldset {border:0 none;}
+	label {cursor:pointer;}
+	a {color:inherit;}
+	a:link, a:visited, a:hover {color:inherit; text-decoration:none;}
+	a:active {text-decoration:none;}
+	input,img {vertical-align:middle;}
+
+	::selection {background-color:purple;}
+
+/* layout */
+	#header_container{
+		position:fixed;
+		left: 0;  top: 0;
+		width: 100%; height: 80px;
+		background-color:  #2f104a;
+		z-index: 3000;
+		
+	}
+
+	#header_container .header_inner {
+		width: 1280px;
+		height: 100%;
+		position: relative;
+		margin: 0 auto;
+	}
+
+	#header_container .logo {
+		position: absolute;
+		left: 80px; top: 50%;
+		margin-top: -20px;
+	}
+
+	#header_container .logo img {
+		width:108px; height:42px;
+	}
+
+	#header_container .gnb_wrap{
+		position: absolute; 
+		left: 200px; top: 50%;
+		margin-top: -18px;
+	}
+
+	#header_container .gnb_wrap li{
+		float: left;
+		margin-left: 40px; 
+	}
+
+
+	#header_container .gnb_wrap li a{
+		display: block;
+		height: 36px; line-height: 36px;
+		color: #fff;
+		font-size: 18px;
+		font-family: "Raleway", sans-serif;
+		text-transform: uppercase;
+		position: relative;
+		opacity: 0.5;
+		transition: all 0.5s;
+	}
+
+	#header_container .gnb_wrap li a:hover{
+		
+		opacity: 1;
+		
+	}
+
+	#header_container .gnb_wrap li a::after{
+		content: "";
+		width:100%;
+		top:100%;
+		position:absolute;
+		background-color: #fff;
+		height: 2px;
+		left:0;
+		transition: all 0.3s;
+		transform: scale(0,1);
+		opacity: 0.5;
+
+	}
+
+	#header_container .gnb_wrap li a:hover::after{
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	#body_container {
+		min-width:1280px;
+	}
+
+	#footer_container {
+		min-width:1280px;
+	}
+
+	.m{
+		display: none;
+	}
+
+
+/*공동섹션*/
+	.subcontent {
+		min-width: 1280px;
+		min-height: 800px;
+		padding: 200px 0;
+
+	}
+
+	.title {
+		font-size: 55px;
+		text-align: center;
+		font-family: "Raleway", sans-serif ;
+		text-transform: uppercase;
+		font-weight: 800;
+		color: #FFFFFF
+	}
+
+	.title.n {
+		font-size: 60px;
+		text-align: center;
+		font-family: "Raleway", sans-serif ;
+		text-transform: uppercase;
+		font-weight: 800;
+		color: pink;
+	}
+
+	.subtext {
+		margin-top: 5px;
+		text-align: center;
+		font-size: 20px;
+		color: #FFFFFF;
+		font-family: "Raleway", sans-serif ;
+		font-weight:300;
+	}
+
+	.link{
+		margin-top: 20px;
+		text-align: center;
+		font-size: 26px;
+		color: #fff;
+		
+		font-family: "Raleway", sans-serif ;
+		font-weight:300;
+	}
+/*공동섹션*/
+
+
+	.intro_section {
+		height: 100%;
+		
+		box-sizing: border-box;
+		min-width: 1280px;
+		text-align: center;
+		position: relative;
+
+	}
+
+	.intro_section .intro_inner{
+		height: 100%;
+		/*background-image: url(../images/bg_intro01.jpg);
+		background-repeat: no-repeat;
+		background-position: */
+		background: url(../images/bg_intro01.jpg) 0 0 no-repeat;
+		background-size:1920px 100%;
+		background-position: center;
+		background-attachment: fixed;
+		/* 백그라운드 이미지 먼저 넣어주고 사이즈 조절해야함 */
+		
+	}
+
+	.intro_section .intro_inner::before{
+		content: "";
+		position: absolute;
+		left: 0; right: 0; bottom: 0; top: 0;
+		background-color: rgba(31,0,38,0.5);
+		
+
+	}
+	.intro_section .intro_inner::after {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	.intro_section .intro_inner .content {
+		display: inline-block;
+		vertical-align: middle;
+		color: #fff;
+		position: relative;
+	}
+
+
+	.intro_section .intro_inner .content h2{
+		font-size: 86px;
+		font-family: "Open sans", sans-serif  ;
+	}
+
+	.intro_section .intro_inner .content p{
+		font-size:26px ; 
+		
+		font-family: "Raleway", sans-serif ;
+		font-weight: 100;
+		line-height: 1.5;
+		margin-top: 20px;
+	}
+
+
+
+
+	#content_section{
+		width:820px;
+		height: 620px;
+		position: absolute;
+		top: 745px;
+		left: 550px;
+		background-color: #2f104a;
+		z-index: 100;
+	}
+	
+
+	#content_section .icon{
+		left: 349px;
+	    width: 100px;
+	    position: absolute;
+	    top: 60px;
+	    height: 94px;
+	}
+
+	#content_section .profile {
+
+		position: absolute; 
+		left: 0; top: 0;
+		width: 220px; 
+		height: 220px;
+		border-radius: 50%;
+		overflow: hidden;
+		box-shadow: 4px 4px 10px #333 ;
+		left: 295px;
+	    
+	    position: absolute;
+	    top: 190px;
+		/* box-shadow: x축값 y축값 spread값 컬러값 */
+	}
+
+	#content_section .profile:hover .pro:before,
+	#content_section .profile:hover .pro img::after{
+
+	} 
+
+	#content_section .profile:hover img {
+		transform:scale(1.1);
+		transition: 0.3s;
+	}
+
+	#content_section .profile img {
+		width: 100%;
+		height: 100%;
+	}
+
+	#content_section .profile .pro{
+		
+		transform:scale(1);
+
+	}
+/*
+	#content_section .text{
+		left: 147px;
+	    width: 528px;
+	    position: absolute;
+	    top: 300px;
+	}
+
+	#content_section .text .font{
+		line-height: 2.5em;
+    	text-align: center;
+	    font-style: normal;
+	    font-size: 15px;
+	    color: #FFFFFF;
+	    line-height: 2.5em;
+	    text-align: center;
+	    margin: 0;
+	    line-height: 30px;
+	    letter-spacing: normal;
+}
+*/
+
+	#content_section .button{
+	left: 300px;
+    position: absolute;
+    top: 470px;
+    height: 48px;
+    min-height: 19px;
+    width: 220px;
+    background-color: transparent;
+    border: solid rgba(163, 121, 189, 1) 1px;
+    cursor: pointer !important;
+}
+
+	#content_section .button .font{
+	transition: color 0.4s ease 0s;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 48px;
+    position: relative;
+    white-space: nowrap;
+
+}
+
+
+	#content_section .button:hover{
+		background-color: #a379bd;
+	}
+
+
+	#body_container{
+		width: 1920px;
+		height: 100%;
+	}
+
+
+
+	#skill_section{
+
+	}
+	#skill{
+		width: 1920px;
+		height: 100%;
+		position: relative;
+	}
+	#skill .sub1_inner{
+		background: url(../images/bg_section1.jpg) 0 0 no-repeat;
+		background-size:100% 100%;
+		width: 100%;
+		height: 1280px;
+		background-attachment: fixed;
+		/*position: relative;*/
+	}
+
+	#skill .sub1_inner .padding {
+		width: 1920px;
+		height: 100px;
+		padding-top: 300px;
+	}
+
+	#skill .sub1_inner .subcontent{
+
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap {
+		font-size:0;
+   		text-align:center;
+   	 	margin-top:80px;
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap strong {
+		margin-top: 20px;
+		display: inline-block;
+		color:#fff
+	}
+
+
+	#skill .sub1_inner .subcontent .skill_wrap li {
+		display:inline-block;
+    	vertical-align:middle;
+    	font-size:28px;
+    	margin:0 30px;
+}
+
+	#skill .sub1_inner .subcontent .skill_wrap .ico_ps {
+		width:180px;
+		height:180px;
+		display:block;
+		border-radius:50%;
+		box-sizing:border-box;
+		background-color:#00c8ff;
+   		
+   		vertical-align:middle;
+
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap li span img{
+		transition:all 0.3s;
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap li span:hover img{
+		transform:rotate(-30deg);
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap .ico_ps::after{
+		vertical-align:middle;
+		height: 100%;
+		display:inline-block;
+		content: "";
+	}
+
+		#skill .sub1_inner .subcontent .skill_wrap .ico_ai {
+		width:180px;
+		height:180px;
+		display:block;
+		border-radius:50%;
+		box-sizing:border-box;
+		background-color:#ff7c00;
+   		
+   		vertical-align:middle;
+
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap .ico_ai::after{
+		vertical-align:middle;
+		height: 100%;
+		display:inline-block;
+		content: "";
+	}
+
+			#skill .sub1_inner .subcontent .skill_wrap .ico_id {
+		width:180px;
+		height:180px;
+		display:block;
+		border-radius:50%;
+		box-sizing:border-box;
+		background-color:#ff3f94;
+   		
+   		vertical-align:middle;
+
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap .ico_id::after{
+		vertical-align:middle;
+		height: 100%;
+		display:inline-block;
+		content: "";
+	}
+
+
+		#skill .sub1_inner .subcontent .skill_wrap .ico_ap {
+		width:180px;
+		height:180px;
+		display:block;
+		border-radius:50%;
+		box-sizing:border-box;
+		background-color:#cf91ff;
+   		
+   		vertical-align:middle;
+
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap .ico_ap::after{
+		vertical-align:middle;
+		height: 100%;
+		display:inline-block;
+		content: "";
+	}
+
+		#skill .sub1_inner .subcontent .skill_wrap .ico_max {
+		width:180px;
+		height:180px;
+		display:block;
+		border-radius:50%;
+		box-sizing:border-box;
+		background-color:#09a1a1;
+   		
+   		vertical-align:middle;
+
+	}
+
+	#skill .sub1_inner .subcontent .skill_wrap .ico_max::after{
+		vertical-align:middle;
+		height: 100%;
+		display:inline-block;
+		content: "";
+	}
+
+
+
+	#portfolio .sub2_inner .padding {
+		width: 1920px;
+		height: 100px;
+		padding-top: 300px;
+	}
+
+	#portfolio .sub2_inner{
+		background: url(../images/bg_section22.jpg) 0 0 no-repeat;
+		background-size:100% 100%;
+		width: 100%;
+		height: 3000px;
+		
+		/*position: relative;*/
+	}
+
+
+	#portfolio .sub2_inner .subcontent{
+
+	}
+
+	#portfolio .sub2_inner .subcontent .skill_wrap {
+		font-size:0;
+   		text-align:center;
+   	 	margin-top:80px;
+	}
+
+	#portfolio .sub2_inner .subcontent .skill_wrap strong {
+		margin-top: 20px;
+		display: inline-block;
+		color:#fff
+	}
+
+	#portfolio .button{
+		left: 850px;
+	margin: 0 auto;
+    position: absolute;
+    min-height: 19px;
+    width: 220px;
+    background-color: #a379bd;;
+    border: solid rgba(163, 121, 189, 1) 1px;
+    cursor: pointer !important;
+}
+
+	#portfolio .button .font{
+	transition: color 0.4s ease 0s;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 48px;
+    position: relative;
+    white-space: nowrap;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+
+
+	#portfolio .button:hover{
+		background-color: transparent;
+
+	}
+
+	#portfolio_section .content_wrap ul{
+		width: 1160px;
+		margin:0 auto; overflow:hidden;
+	}
+
+	#portfolio_section .content_wrap .item{
+		width: 360px; height: 355px;
+		background-color: #fff;
+		float: left; margin: 80px 0 0 ;
+		
+		box-sizing: border-box;}
+
+
+	#portfolio_section .content_wrap .item:hover .thumbbox .type {
+		opacity: 1;
+	}
+
+	#portfolio_section .content_wrap .item:hover .thumbbox .type::before,
+	#portfolio_section .content_wrap .item:hover .thumbbox .type::after{
+		transform:scale(1);
+	}
+	#portfolio_section .content_wrap .item:hover .thumbbox img {
+		transform: scale(1.1);
+	}
+	#portfolio_section .content_wrap .item:nth-child(3n+1){margin-left: 0;}
+
+	#portfolio_section .content_wrap .item .thumbbox{
+		height: 358px; overflow: hidden;
+		position:relative;
+	}
+
+
+
+	#portfolio_section .content_wrap .item .thumbbox img{
+		width: 100%; height: 100%;
+		transition: all 0.3s;
+	}
+
+	#portfolio_section .content_wrap .item .thumbbox .type {
+		position:absolute; 
+		left: 0; right: 0; top: 0; bottom: 0;
+		background-color: rgba(163, 83, 193, 0.84);
+		color: white;
+		line-height: 358px;
+		text-align:center;
+		font-size:26px;
+		text-transform:uppercase;
+		font-family: "Raleway", sans-serif;
+		font-weight: 100;
+		opacity:0;
+		transition: all 0.8s;
+	}
+
+	#portfolio_section .content_wrap .item .thumbbox .type::before,
+	#portfolio_section .content_wrap .item .thumbbox .type::after{
+		content: "";
+		position: absolute;
+		left: 5px; right:5px; top:5px; bottom:5px;
+		transition:all 1s;
+
+	}
+
+
+
+	#portfolio_section .content_wrap .item .contbox{
+		padding: 15px 15px 0;}
+
+	#portfolio_section .content_wrap .item .contbox .tit{
+		font-size: 18px;
+}
+
+	#portfolio_section .content_wrap .item .contbox .type{color:#C470C4; margin-top: 8px; display: block; text-transform:uppercase;}
+
+	#portfolio_section .content_wrap .item .contbox .desc{color:#999; line-height: 16px; height: 48px; overflow: hidden; margin-top: 10px;
+		text-overflow:ellipsis;
+		-webkit-line-clamp:3;
+		-webkit-box-orient: vertical;
+		display: -webkit-box;
+		word-wrap: break-word;
+		-o-text-overflow:ellipsis;
+		/*3번째줄 이후 ...생김*/}
+
+/*서브3*/
+	#career .sub3_inner .padding {
+		width: 1920px;
+		height: 100px;
+		padding-top: 10px;
+	}
+
+	#career .sub3_inner{
+		
+		background-size:100% 100%;
+		width: 100%;
+		height: 2500px;
+		background-attachment: fixed;
+		/*position: relative;*/
+	}
+
+	#career .time{
+		padding-top: 100px;
+	}
+
+	#career .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #000;
+}
+
+
+	#career .timeline::after {
+	    content: '';
+	    position: absolute;
+	    width: 6px;
+	    background-color: white;
+	    top: 0;
+	    bottom: 0;
+	    left: 50%;
+	    margin-left: -3px;
+	}
+
+	
+	#career .container {
+	    padding: 10px 40px;
+	    position: relative;
+	    background-color: inherit;
+	    width: 50%;
+	}
+
+	
+	#career .container::after {
+	    content: '';
+	    position: absolute;
+	    width: 25px;
+	    height: 25px;
+	    right: -17px;
+	    background-color: white;
+	    border: 4px solid #FF9F55;
+	    top: 15px;
+	    border-radius: 50%;
+	    z-index: 1;
+	}
+
+	
+	#career .left {
+	    right: 6.7%
+	}
+
+	
+	#career .right {
+	    left: 50%;
+	}
+
+	
+	#career .left::before {
+	    content: " ";
+	    height: 0;
+	    position: absolute;
+	    top: 22px;
+	    width: 0;
+	    z-index: 1;
+	    right: 30px;
+	    border: medium solid white;
+	    border-width: 10px 0 10px 10px;
+	    border-color: transparent transparent transparent white;
+	}
+
+	
+	#career .right::before {
+	    content: " ";
+	    height: 0;
+	    position: absolute;
+	    top: 22px;
+	    width: 0;
+	    z-index: 1;
+	    left: 30px;
+	    border: medium solid white;
+	    border-width: 10px 10px 10px 0;
+	    border-color: transparent white transparent transparent;
+	}
+
+	
+	#career .right::after {
+	    left: -16px;
+	}
+
+	
+	#career .content {
+	    padding: 20px 30px;
+	    background-color: white;
+	    position: relative;
+	    border-radius: 6px;
+	}
+
+	
+/*서브4*/
+	#inquiry .sub4_inner .padding {
+		width: 1920px;
+		height: 100px;
+		padding-top: 100px;
+	}
+
+	#inquiry .sub4_inner{
+		background: url(../images/bg_section1.jpg);
+		background-size:100% 100%;
+		width: 100%;
+		height: 600px;
+		background-attachment: fixed;
+		/*position: relative;*/
+	}
+
+
+/*서브4공중박스*/
+
+	#inquiry_section{
+		width:820px;
+		height: 620px;
+		position: absolute;
+		top: 4550px;
+		left: 550px;
+		background-color: #2f104a;
+		z-index: 100;
+	}
+	
+
+	#inquiry_section .icon{
+		left: 100px;
+	    width: 100px;
+	    position: absolute;
+	    top: 120px;
+	    height: 94px;
+	    line-height: 2.5em;
+	    font-style: normal;
+	    font-size: 18px;
+	    color: #FFFFFF;
+	    line-height: 2.5em;
+	    margin: 0;
+	    line-height: 30px;
+	    letter-spacing: normal;
+	}
+
+	#inquiry_section .text{
+		left: 100px;
+	    width: 250px;
+	    position: absolute;
+	    top: 180px;
+	    text-align: left;
+	}
+
+	#inquiry_section .text2{
+		left: 100px;
+	    width: 250px;
+	    position: absolute;
+	    top: 350px;
+	    text-align: left;
+	}
+
+	#inquiry_section .text3{
+		left: 100px;
+	    width: 250px;
+	    position: absolute;
+	    top: 380px;
+	    text-align: left;
+	}
+
+	#inquiry_section .text, .text2, .text3 .font{
+		line-height: 2.5em;
+	    font-style: normal;
+	    font-size: 15px;
+	    color: #FFFFFF;
+	    line-height: 2.5em;
+	    margin: 0;
+	    line-height: 30px;
+	    letter-spacing: normal;
+}
+
+
+	#inquiry_section .button{
+	left: 480px;
+    position: absolute;
+    top: 350px;
+    height: 48px;
+    min-height: 19px;
+    width: 220px;
+    background-color: transparent;
+    border: solid rgba(163, 121, 189, 1) 1px;
+    cursor: pointer !important;
+    text-align: center;
+}
+
+	#inquiry_section .button:hover{
+		background-color: #a379bd;
+	}
+
+	#inquiry_section .button .font{
+	transition: color 0.4s ease 0s;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 48px;
+
+    position: relative;
+    white-space: nowrap;
+
+
+
+
+}
+
+	#inquiry_section .form{
+		left: 420px;
+	    position: absolute;
+	    top: 130px;
+		width: 320px;
+		
+		
+	}
+
+
+   
+
+	#inquiry_section .input{
+		border: 1px solid #333;
+		background-color: #fff;
+	}
+
+	#inquiry_section .input input {
+		border: none;
+		width: 100%;
+		box-sizing:border-box;
+		background:transparent;
+		color: #333;
+		font-size: 17px;
+		height: 35px;
+
+	}
+
+	#inquiry_section .form .acount::after{
+		clear: both;
+	}
+
+	#inquiry_section .form .acount .input.n{
+		float: left;
+	    width: 150px;
+	}
+
+
+
+	#inquiry_section .form .acount .input.e{
+		float: right;
+	    width: 150px;
+	    margin-bottom: 10px;
+	}
+
+	#inquiry_section .input.s{
+	   float: left;
+	   width: 320px;
+	   margin-bottom: 10px;
+
+	}
+
+	#inquiry_section .input.m{
+		
+	    width: 320px;
+
+	}
+
+
+	#footer .sub5_inner .padding {
+		width: 1920px;
+		height: 100px;
+		padding-top: 100px;
+	}
+
+	#footer .sub5_inner{
+		background-color: #2f104a;
+		
+		height:300px;
+		
+		/*position: relative;*/
+	}
+
+	#footer .sub5_inner .foot{
+		color:white;
+		font-size:15px;
+		letter-spacing:1px;
+		text-align: center;
+		height:100px;
+		line-height: 100px;
+	}
